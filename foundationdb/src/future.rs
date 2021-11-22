@@ -341,6 +341,7 @@ pub struct FdbValuesIter {
 }
 
 unsafe impl Send for FdbValuesIter {}
+unsafe impl Sync for FdbValuesIter {}
 
 impl Iterator for FdbValuesIter {
     type Item = FdbValue;
@@ -411,6 +412,7 @@ pub struct FdbValue {
 }
 
 unsafe impl Send for FdbValue {}
+unsafe impl Sync for FdbValue {}
 
 impl Deref for FdbValue {
     type Target = FdbKeyValue;

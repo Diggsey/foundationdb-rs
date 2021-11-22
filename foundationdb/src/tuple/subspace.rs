@@ -61,7 +61,7 @@ impl Subspace {
     /// prepended.
     pub fn pack<T: TuplePack>(&self, t: &T) -> Vec<u8> {
         let mut out = self.prefix.clone();
-        pack_into(t, &mut out);
+        pack_into_with_versionstamp(t, &mut out);
         out
     }
 
